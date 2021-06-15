@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puissance 4</title>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $('#game').ready(function(){
+            const p4 = new P4('#game', 7, 6, 'yellow', 'red','Lattana', 'Pangolin');
+       
+            $('#restart').on('click', function(){
+                $('#game').empty();
+                p4.drawGame();
+                $('#restart').css('visibility', 'hidden');
+            })
+        });
+    </script>
+    <script src="plugin.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Puissance 4</h1>
+    <h2>score</br>
+    <span id="player1"></span> - <span id="player2"></span></h2>
+    <div id="game"></div></br>
+    <h2 id="turn"></h2> 
+    <button id="restart" style='visibility: hidden;'>Restart</button>
+        
+</body>
+</html>
